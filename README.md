@@ -1,6 +1,7 @@
-I built and installed the custom cross compiler and binutils of gnu as the other cross compiler is specific for linux but our kerenl is not linux
-
-
+we have to download build and install cross compiler given on the
+following link
+https://wiki.osdev.org/GCC_Cross-Compiler
+As we can't use gcc that is targeted for linux not for our own kernel
 
 The best site for materials related to this course
 

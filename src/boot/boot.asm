@@ -67,7 +67,11 @@ load32:
 	mov ss,ax
 	mov ebp,0x00200000
 	mov esp,ebp
-jmp $
+	;enable A20Line 
+	;copied from https://wiki.osdev.org/A20_Line
+	in al, 0x92
+	or al, 2
+	out 0x92, al
 	jmp $			;infinite loop
 
 print:

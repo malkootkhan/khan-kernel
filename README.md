@@ -1,3 +1,7 @@
+DISK: read sector into memory: https://www.ctyme.com/intr/rb-0607.htm
+
+
+
 we have to download build and install cross compiler given on the
 following link
 https://wiki.osdev.org/GCC_Cross-Compiler

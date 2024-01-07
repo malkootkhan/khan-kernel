@@ -15,3 +15,7 @@ all:	./bin/boot.bin ./bin/kernel.bin
 
 clean:
 	rm -rf ./bin/boot.bin
+	rm -rf ./bin/khan-os.bin
+	rm -rf ./bin/kernel.bin
+	rm -rf ${FILES}
+	rm -rf ./build/kernelfull.o

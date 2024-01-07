@@ -17,7 +17,7 @@ start:
 
 step2:
 	cli		;interrupt disable
-	mov ax,0x7C0
+	mov ax,0x00
 	mov ds,ax
 	mov es,ax
 	mov ss,ax
@@ -78,7 +78,7 @@ print_char:
 load32:
 	mov eax,1
 	mov ecx,100
-	mov edi,0x00100000
+	mov edi,0x0100000
 	call ata_lba_read
 	jmp CODE_SEG:0x0100000
 
@@ -86,7 +86,7 @@ ata_lba_read:
 	mov ebx,eax	;backup the lba
 	;send the highest 8 bits of lba to hard disk controller
 	shr eax,24	;shift to the right by 24 bits
-	or eax,0x0E	;This select the master drive
+	or eax,0xE0	;This select the master drive
 	mov dx,0x1F6
 	out dx,al	;the 'out' instruction talk to the external bus I mean need to send on bus
 	;finished sending hieghest 8 bits of the lba

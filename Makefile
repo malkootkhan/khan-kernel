@@ -15,7 +15,7 @@ all:	./bin/boot.bin ./bin/kernel.bin
 ./build/kernel.asm.o: ./src/kernel.asm
 	nasm -f elf -g ./src/kernel.asm -o ./build/kernel.asm.o
 ./build/kernel.o: ./src/kernel.c
-	i686-elf-gcc $(FLAGS) $(INCLUDE) -std=gnu99 -c ./src/kernel.c -o ./build/kernel.o
+	i686-elf-gcc $(INCLUDE) $(FLAGS) -std=gnu99 -c ./src/kernel.c -o ./build/kernel.o
 clean:
 	rm -rf ./bin/boot.bin
 	rm -rf ./bin/khan-os.bin

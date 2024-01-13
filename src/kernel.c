@@ -26,12 +26,18 @@ uint16_t getLength(const char* str)
 }
 uint16_t format_char(char c, char color)
 {
-	return (GREEN << 8 | c);
+	return (color << 8 | c);
 }
 void print_char(const char c, const uint16_t color)
 {
 
 	video_mem = (uint16_t *)VGA_ADDR;
+	if(c == '\n')
+	{
+		pos.y += 1;
+		pos.x = 0;
+		return;
+	}
 	video_mem[pos.y * MAX_WIDTH + pos.x] = format_char(c,color);
 	pos.x += 1;
 	if(pos.x == MAX_WIDTH)
@@ -70,10 +76,10 @@ void clear_screen(void)
 void kernel_main()
 {
 	clear_screen();
-	print("The first sentence!");
-	print("The second sentence!");
-	print("The three sentence!");
-	print("The fourth sentence!");
+	print("The first sentence!\n");
+	print("The second sentence!\n");
+	print("The third sentence!\n");
+	print("The fourth sentence!\n");
 }
 
 
